@@ -59,13 +59,94 @@ root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago#
 
 ------------------------------------------------------------------------------------------
 3- ADICIONAR NO REPO LOCAL E AO FLUXO DE VERSIONAMENTO
-A- CRIAR NO SITE GITHUB
+oot@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git add .
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/.gitattributes', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/.npmignore', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/.travis.yml', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/LICENSE', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/pre-publish.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'frontend/sistemas-pagos-frontend/node_modules/void-elements/test/index.js', CRLF will be replaced by LF the next time Git touches it
+
+VERIFICANDO
+
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .idea/.gitignore
+	new file:   .idea/compiler.xml
+	new file:   .idea/encodings.xml
+	new file:   .idea/jarRepositories.xml
+	new file:   .idea/misc.xml
+	new file:   .idea/vcs.xml
+	new file:   .mvn/wrapper/maven-wrapper.properties
+	new file:   .vscode/settings.json
+	new file:   backend/sistemapago/HELP.md
+	new file:   backend/sistemapago/gitHub.com
+	new file:   backend/sistemapago/mvnw
+	new file:   backend/sistemapago/mvnw.cmd
+	new file:   backend/sistemapago/pom.xml
+	new file:   backend/sistemapago/read.txt
+	new file:   backend/sistemapago/src/main/java/com/marcel/sistemapago/SistemapagoApplication.java
+	new file:   backend/sistemapago/src/main/java/com/marcel/sistemapago/controller/PagoController.java
+	new file:   backend/sistemapago/src/main/java/com/marcel/sistemapago/dto/NewDto.java
+	new file:   backend/sistemapago/src/main/java/com/marcel/sistemapago/entities/Estudiante.java
+	.
+	.
+	.
 
 
 
 ------------------------------------------------------------------------------------------
 4-  INFORMAR AO GIT MUDANÇAS, commit (SAVE POINT)
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git commit -a -m "spring boot angular 20 sistemas-pagos"
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+[main (root-commit) b03f264] spring boot angular 20 sistemas-pagos
+ 22185 files changed, 3602473 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/compiler.xml
+ create mode 100644 .idea/encodings.xml
+ create mode 100644 .idea/jarRepositories.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 .mvn/wrapper/maven-wrapper.properties
+ create mode 100644 .vscode/settings.json
+ create mode 100644 backend/sistemapago/HELP.md
+ create mode 100644 backend/sistemapago/gitHub.com
+ create mode 100755 backend/sistemapago/mvnw
+ create mode 100644 backend/sistemapago/mvnw.cmd
+ create mode 100644 backend/sistemapago/pom.xml
+ create mode 100644 backend/sistemapago/read.txt
+ create mode 100644 backend/sistemapago/src/main/java/com/marcel/sistemapago/SistemapagoApplication.java
+ .
+ .
+ .
+ create mode 100755 frontend/sistemas-pagos-frontend/src/app/services/estudiantes.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/custom-theme.scss
+ create mode 100755 frontend/sistemas-pagos-frontend/src/environments/environment.development.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/environments/environment.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/index.html
+ create mode 100755 frontend/sistemas-pagos-frontend/src/main.server.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/main.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/server.ts
+ create mode 100755 frontend/sistemas-pagos-frontend/src/styles.css
+ create mode 100755 frontend/sistemas-pagos-frontend/tsconfig.app.json
+ create mode 100755 frontend/sistemas-pagos-frontend/tsconfig.json
+ create mode 100755 frontend/sistemas-pagos-frontend/tsconfig.spec.json
+ create mode 100644 gitAdd.txt
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# 
 
+VERIFICANDO
+
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git status
+On branch main
+nothing to commit, working tree clean
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# 
 
 ------------------------------------------------------------------------------------------
 5- DISPONIBILIZANDO AO REPO REMOTO
@@ -87,12 +168,27 @@ git branch -M main
 git push -u origin main
 
 B- ADICIONANDO ORIGEM REMOTA OU CONEXAO DO PC COM REPO DO GIT
-
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git remote add origin https://github.com/MarcelMotta-J/sistemapago.git
 
 C -
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git branch -M main
 
 
 D- ENVIANDO DO REPO LOCAL PARA O REPO REMOTO NO GITHUB
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git push -u origin main
+Username for 'https://github.com': MarcelMotta-J
+Password for 'https://MarcelMotta-J@github.com': ENTRAR COM TOKEN AQUI
+Enumerating objects: 21085, done.
+Counting objects: 100% (21085/21085), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14811/14811), done.
+Writing objects: 100% (21085/21085), 53.95 MiB | 2.21 MiB/s, done.
+Total 21085 (delta 5631), reused 21085 (delta 5631), pack-reused 0
+remote: Resolving deltas: 100% (5631/5631), done.
+To https://github.com/MarcelMotta-J/sistemapago.git
+ * [new branch]        main -> main
+branch 'main' set up to track 'origin/main'.
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# 
 
 ------------------------------------------------------------------------------------------
 
