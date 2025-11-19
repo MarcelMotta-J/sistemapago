@@ -1,0 +1,55 @@
+atualizar:
+src/app/services/estudiantes.ts
+
+HttpClientModule deprecated
+
+https://stackoverflow.com/questions/78430636/httpclientmodule-is-deprecated-in-angular-18-whats-the-replacement
+
+he HttpClientModule was superseded by the already existing provideHttpClient() provider function.
+
+javascript
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    // Remove the module 
+    ...
+  ],
+  declarations: [
+    AppComponent,
+    ...
+ ],
+ providers: [provideHttpClient()] // add it here
+ bootstrap: [ AppComponent ]
+})
+export class AppModule {} 
+
+
+f you see the following error: Type 'EnvironmentProviders' is not assignable to type 'Provider'., it means you were importing the HttpClientModule in a component. This shouldn't have happen in the first place. Simply remove the import.
+
+If you are relying on standalone component, provideHttpClient() needs to be added to the providers when invoking bootstrapApplication() :
+
+javascript
+
+boostrapApplication(AppComponent, appConfig); 
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    . . .
+    provideHttpClient(withFetch())
+  ]
+};
+
+The reason behind this change is that the HttpClientModule doubled-up the provideHttpClient() function that was introduced for standalone apps.
+
+And here is an extract of the Angular source code, the module was really just providing the HttpClient. (No declarations, imports or export whatsoever)
+
+javascript
+
+@NgModule({
+  providers: [provideHttpClient(withInterceptorsFromDi())],
+})
+
+export class HttpClientModule {}
+
+So the team chose to deprecate it and the deprecation message suggests to use the provideHttpClient() provider function. This way devs would less be inclined to have both the module and the provider declared. Which was a common issue amongst new developers.

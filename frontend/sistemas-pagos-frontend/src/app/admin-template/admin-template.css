@@ -1,0 +1,6 @@
+.example-container {
+  width: 100%;
+  height: 100vh; /* Exemplo: ocupa 100% da altura do viewport */
+  border: 1px solid #ccc;
+  
+}

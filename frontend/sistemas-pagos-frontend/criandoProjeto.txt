@@ -1,0 +1,559 @@
+Crea tu primera aplicación web con Spring Boot y Angular Material (2025)
+https://www.youtube.com/watch?v=qtKmbNToDZ8&list=TLPQMDUxMTIwMjXq5_QJ8lVFUQ&index=2
+
+1 - CRIANDO
+root@brainiac-Inspiron-3437:/home/brainiac/projects# ng new sistemas-pagos-frontend
+? Which stylesheet format would you like to use? (Use arrow keys)
+❯ CSS             [ https://developer.mozilla.org/docs/Web/CSS                  
+   ]
+  Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss
+   ]
+  Sass (Indented) [
+https://sass-lang.com/documentation/syntax#the-indented-syntax ]
+  Less            [ http://lesscss.org
+User force closed the prompt with SIGINT
+root@brainiac-Inspiron-3437:/home/brainiac/projects# ng new sistemas-pagos-frontend --no-standalone
+
+--no-standalone SIGNIFICA
+Angular no standalone" refere-se ao uso de componentes autônomos, que são componentes que não dependem de um NgModule para serem utilizados. Eles são autocontidos e podem ser importados diretamente para serem usados por outros componentes. Essa abordagem, que está se tornando o padrão, simplifica o desenvolvimento ao eliminar a necessidade de módulos intermediários, tornando a estrutura do projeto mais enxuta e modular. 
+Este vídeo explica o que são Standalone Components
+https://www.youtube.com/watch?v=xRMGtbnxQbs&t=113s
+
+
+✔ Which stylesheet format would you like to use? CSS             [ 
+https://developer.mozilla.org/docs/Web/CSS                     ]
+✔ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation 
+(SSG/Prerendering)? Yes
+✔ Do you want to create a 'zoneless' application without zone.js? Yes
+✔ Which AI tools do you want to configure with Angular best practices? 
+https://angular.dev/ai/develop-with-ai None
+
+CREATE sistemas-pagos-frontend/README.md (1484 bytes)
+CREATE sistemas-pagos-frontend/.editorconfig (314 bytes)
+CREATE sistemas-pagos-frontend/.gitignore (604 bytes)
+CREATE sistemas-pagos-frontend/angular.json (2690 bytes)
+CREATE sistemas-pagos-frontend/package.json (1379 bytes)
+CREATE sistemas-pagos-frontend/tsconfig.json (992 bytes)
+CREATE sistemas-pagos-frontend/tsconfig.app.json (447 bytes)
+CREATE sistemas-pagos-frontend/tsconfig.spec.json (408 bytes)
+CREATE sistemas-pagos-frontend/.vscode/extensions.json (130 bytes)
+CREATE sistemas-pagos-frontend/.vscode/launch.json (470 bytes)
+CREATE sistemas-pagos-frontend/.vscode/tasks.json (938 bytes)
+CREATE sistemas-pagos-frontend/src/main.ts (198 bytes)
+CREATE sistemas-pagos-frontend/src/index.html (307 bytes)
+CREATE sistemas-pagos-frontend/src/styles.css (80 bytes)
+CREATE sistemas-pagos-frontend/src/main.server.ts (70 bytes)
+CREATE sistemas-pagos-frontend/src/server.ts (1609 bytes)
+CREATE sistemas-pagos-frontend/src/app/app-routing-module.ts (245 bytes)
+CREATE sistemas-pagos-frontend/src/app/app-module.ts (594 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.css (0 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.spec.ts (925 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.ts (251 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.html (20122 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.module.server.ts (389 bytes)
+CREATE sistemas-pagos-frontend/src/app/app.routes.server.ts (166 bytes)
+CREATE sistemas-pagos-frontend/public/favicon.ico (15086 bytes)
+✔ Packages installed successfully.
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+    Successfully initialized git.
+root@brainiac-Inspiron-3437:/home/brainiac/projects# 
+
+
+2 - AUTORIZAÇÃO DE MEXER NA PASTA
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/custom-theme.scss
+
+
+3 - CARREGAR ANGULAR MATERIAL
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng add @angular/material
+✔ Determining Package Manager
+  › Using package manager: npm
+✔ Searching for compatible package version
+  › Found compatible package version: @angular/material@20.2.11.
+✔ Loading package information from registry
+✔ Confirming installation
+✔ Installing package
+✔ Select a pair of starter prebuilt color palettes for your Angular Material theme Azure/Blue         [Preview:
+ https://material.angular.dev?theme=azure-blue]
+UPDATE package.json (1448 bytes)
+✔ Packages installed successfully.
+CREATE src/custom-theme.scss (1147 bytes)
+UPDATE angular.json (2729 bytes)
+UPDATE src/index.html (507 bytes)
+UPDATE src/styles.css (181 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+1h25min 37
+
+5 - CRIANDO COMPONENTES
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c admin-template
+CREATE src/app/admin-template/admin-template.css (0 bytes)
+CREATE src/app/admin-template/admin-template.spec.ts (583 bytes)
+CREATE src/app/admin-template/admin-template.ts (223 bytes)
+CREATE src/app/admin-template/admin-template.html (29 bytes)
+UPDATE src/app/app-module.ts (678 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+AUTORIZAÇÃO DE MEXER NA PASTA SEM ROOT
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/admin-template
+
+
+6 - IMPORTAÇÃO MAT-TOLLBAR
+GOOGLE==> angular material mat-toolbar
+
+https://material.angular.dev/components/toolbar/api
+
+COPIAR
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+IR EM app-module.ts ou app.module.ts
+
+COLAR
+
+import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing-module';
+import { App } from './app';
+import { AdminTemplate } from './admin-template/admin-template';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+@NgModule({
+  declarations: [
+    App,
+    AdminTemplate
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule
+  ],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
+    provideClientHydration(withEventReplay())
+  ],
+  bootstrap: [App]
+})
+export class AppModule { }
+
+
+IMPORTS ACIMA ESCREVER MatToolbarModule:
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule
+  ],
+
+
+7 - RODAR SERVIDOR
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng serve -o
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+styles.css           | styles           |   8.90 kB | 
+main.js              | main             |   8.82 kB | 
+
+                     | Initial total    |  17.71 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |  10.45 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [9.363 seconds] - 2025-11-06T20:30:01.385Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+
+
+8 - IR NO TYPESCRIPT DO COMPONENT (admin-template.ts)
+
+mport { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-admin-template',
+  standalone: false,
+  templateUrl: './admin-template.html',
+  styleUrl: './admin-template.css',
+})
+export class AdminTemplate {
+
+}
+
+COPIAR
+app-admin-template
+
+
+9 - IR EM APP.HTML
+
+<h1>olá</h1>
+
+<app-admin-template>
+  
+</app-admin-template>
+
+
+9 - IR NO COMPONENTE TYPESCRIPT app.ts e colar app-admin-template
+
+
+10 - CRIAR COMPONENTE home
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c home
+CREATE src/app/home/home.css (0 bytes)
+CREATE src/app/home/home.spec.ts (519 bytes)
+CREATE src/app/home/home.ts (184 bytes)
+CREATE src/app/home/home.html (19 bytes)
+UPDATE src/app/app-module.ts (1188 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/home
+
+
+
+11 - CRIAR COMPONENTE profile
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c profile
+CREATE src/app/profile/profile.css (0 bytes)
+CREATE src/app/profile/profile.spec.ts (540 bytes)
+CREATE src/app/profile/profile.ts (196 bytes)
+CREATE src/app/profile/profile.html (22 bytes)
+UPDATE src/app/app-module.ts (1246 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/profile
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+
+12 - CRIAR COMPONENTE load-estudiantes
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c load-estudiantes
+CREATE src/app/load-estudiantes/load-estudiantes.css (0 bytes)
+CREATE src/app/load-estudiantes/load-estudiantes.spec.ts (597 bytes)
+CREATE src/app/load-estudiantes/load-estudiantes.ts (231 bytes)
+CREATE src/app/load-estudiantes/load-estudiantes.html (31 bytes)
+UPDATE src/app/app-module.ts (1338 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/load-estudiantes
+
+
+13 - CRIAR COMPONENTE load-pagos
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c load-pagos
+CREATE src/app/load-pagos/load-pagos.css (0 bytes)
+CREATE src/app/load-pagos/load-pagos.spec.ts (555 bytes)
+CREATE src/app/load-pagos/load-pagos.ts (207 bytes)
+CREATE src/app/load-pagos/load-pagos.html (25 bytes)
+UPDATE src/app/app-module.ts (1406 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/load-pagos
+
+
+14 - CRIAR COMPONENTE login
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c login
+CREATE src/app/login/login.css (0 bytes)
+CREATE src/app/login/login.spec.ts (526 bytes)
+CREATE src/app/login/login.ts (188 bytes)
+CREATE src/app/login/login.html (20 bytes)
+UPDATE src/app/app-module.ts (1456 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/login
+
+
+15 - CRIAR COMPONENTE pagos
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c pagos
+CREATE src/app/pagos/pagos.css (0 bytes)
+CREATE src/app/pagos/pagos.spec.ts (526 bytes)
+CREATE src/app/pagos/pagos.ts (188 bytes)
+CREATE src/app/pagos/pagos.html (20 bytes)
+UPDATE src/app/app-module.ts (1506 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/pagos
+
+
+16 - CRIAR COMPONENTE estudiantes
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c estudiantes
+CREATE src/app/estudiantes/estudiantes.css (0 bytes)
+CREATE src/app/estudiantes/estudiantes.spec.ts (568 bytes)
+CREATE src/app/estudiantes/estudiantes.ts (212 bytes)
+CREATE src/app/estudiantes/estudiantes.html (26 bytes)
+UPDATE src/app/app-module.ts (1580 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/estudiantes
+
+
+17 - CRIAR COMPONENTE dashboard
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c dashboard
+CREATE src/app/dashboard/dashboard.css (0 bytes)
+CREATE src/app/dashboard/dashboard.spec.ts (554 bytes)
+CREATE src/app/dashboard/dashboard.ts (204 bytes)
+CREATE src/app/dashboard/dashboard.html (24 bytes)
+UPDATE src/app/app-module.ts (1646 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/dashboard
+
+
+18 - CONFIGURAR ROTAS DOS COMPONENTES EM /home/brainiac/projects/sistemas-pagos-frontend/src/app/app-routing-module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { Home } from './home/home';
+import { Login } from './login/login';
+import { LoadEstudiantes } from './load-estudiantes/load-estudiantes';
+import { LoadPagos } from './load-pagos/load-pagos';
+import { Dashboard } from './dashboard/dashboard';
+import { Estudiantes } from './estudiantes/estudiantes';
+import { Pagos } from './pagos/pagos';
+
+const routes: Routes = [
+  { path: "home", component: Home },
+  { path: "profile", component: Profile}, // MAS PARA FRENTE VIDEO ARRUMA EM 1H52MIN32SEG
+  { path: "login", component: Login },
+  { path: "loadEstudiantes", component: LoadEstudiantes },
+  { path: "loadPagos", component: LoadPagos },
+  { path: "dashboard", component: Dashboard },
+  { path: "estudiantes", component: Estudiantes },
+  { path: "pagos", component: Pagos },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+// 1:49:14
+
+
+19 - RODAR SERVIDOR ANGULAR
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng serve -o
+OU
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# npm run start
+
+> sistemas-pagos-frontend@0.0.0 start
+> ng serve
+
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             |  40.36 kB | 
+styles.css           | styles           |   9.05 kB | 
+
+                     | Initial total    |  49.41 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |  41.94 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [4.431 seconds] - 2025-11-08T20:12:48.334Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per- transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+
+
+20 - APÓS A CONFIGURAÇÃO ACIMA SÓ RODA:
+http://localhost:4200/home
+
+21 - IR EM /home/brainiac/projects/sistemas-pagos-frontend/src/app/app.html 
+E MUDAR
+<app-admin-template>
+
+</app-admin-template>
+PARA
+<router-outlet></router-outlet>
+
+
+22 - http://localhost:4200/home VAI MOSTRAR
+home works!
+
+http://localhost:4200/login
+login works!
+
+http://localhost:4200/profile
+profile works!
+
+http://localhost:4200/loadEstudiantes
+load-estudiantes works!
+
+
+23 - IR EM /home/brainiac/projects/sistemas-pagos-frontend/src/app/app.html 
+E VOLTAR
+<router-outlet></router-outlet>
+PARA
+<app-admin-template>
+
+</app-admin-template>
+
+
+24 - CRIANDO SERVIÇO 
+root@brainiac-Inspiron-3437:/home/brainiac# cd /home/brainiac/projects/sistemas-pagos-frontend
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g s services/auth
+CREATE src/app/services/auth.spec.ts (311 bytes)
+CREATE src/app/services/auth.ts (109 bytes)
+CRIADO EM:
+src/app/services
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/services
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+
+25 - CONFIGURAR SERVIÇO EM src/app/services/auth.ts
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class Auth {
+
+  public users: any = {
+    admin: { password: '1234', roles: ['ESTUDIANTE', 'ADMIN'] },
+    user1: { password: '1234', roles: ['ESTUDIANTE'] }
+  };
+
+  constructor() {
+
+  }
+
+  public login(username: string, password: string): boolean{
+    if(this.users[username] && this.users[password]['password'] == password){
+        return true;
+    }else{
+      return false;
+    }
+  }
+
+}
+
+
+26 - UTILIZAR SERVIÇO CRIADO EM login.ts
+
+
+
+27 -CRIANDO GUARDS
+escolher canActive 
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g g guards/auth
+? Which type of guard would you like to create?
+❯◉ CanActivate
+ ◯ CanActivateChild
+ ◯ CanDeactivate
+ ◯ CanMatch
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g g guards/auth
+✔ Which type of guard would you like to create? CanActivate
+CREATE src/app/guards/auth-guard.spec.ts (461 bytes)
+CREATE src/app/guards/auth-guard.ts (128 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+canActive - permite negar acesso a uma rota ou não
+canActiveChild controla acesso a rotas filhas como 
+canDeactive pergunta se usuário quer realmente sair de uma página
+canMatch se uma rota pode coincidir com uma configuração específica de uma aplicação
+
+- Guards são serviços ou gunções que vão controlar o acesso a rotas em angular
+- se usuário pode ir a uma rota ou dirigí-lo a outra.
+- para proteger rotas
+- evitar acesso não autorizado ou indesejado
+- usado em app com niveis de acesso como autenticação, autorização
+AUTORIZAÇÃO
+
+
+
+28 - CONFIGURAÇÃO, IR EM src/app/guards/augth-guards.ts
+
+
+29 - CRIANO SERVICES estudiantes
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g s services/estudiantes
+CREATE src/app/services/estudiantes.spec.ts (346 bytes)
+CREATE src/app/services/estudiantes.ts (116 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/services
+
+
+29 - GERAR ENVIRONMENTS
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g environments
+CREATE src/environments/environment.ts (31 bytes)
+CREATE src/environments/environment.development.ts (31 bytes)
+UPDATE angular.json (2954 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/environments
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+
+
+
+30 - CONFIGURANDO ESTUDIANTES.TS EM src/app/services/estudiantes.ts
+
+
+31 - CRIANDO COMPONENTE ESTUDIANTE-DETAILS
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c estudiante-details
+CREATE src/app/estudiante-details/estudiante-details.css (0 bytes)
+CREATE src/app/estudiante-details/estudiante-details.spec.ts (611 bytes)
+CREATE src/app/estudiante-details/estudiante-details.ts (239 bytes)
+CREATE src/app/estudiante-details/estudiante-details.html (33 bytes)
+UPDATE src/app/app-module.ts (2609 bytes)
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend#
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/estudiante-details
+
+
+31 - GERAR COMPONENTE NEW-PAGO
+
+oot@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# ng g c new-pago
+CREATE src/app/new-pago/new-pago.css (0 bytes)
+CREATE src/app/new-pago/new-pago.spec.ts (541 bytes)
+CREATE src/app/new-pago/new-pago.ts (199 bytes)
+CREATE src/app/new-pago/new-pago.html (23 bytes)
+UPDATE src/app/app-module.ts (2669 bytes)
+AUTORIZAÇÃO
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# chmod -R 777 /home/brainiac/projects/sistemas-pagos-frontend/src/app/new-pago
+
+
+32 - sweetalert
+https://sweetalert2.github.io/
+
+https://sweetalert2.github.io/#download
+copiar ===> npm install sweetalert2
+
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# npm install sweetalert2
+
+added 1 package, and audited 612 packages in 5s
+
+107 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+root@brainiac-Inspiron-3437:/home/brainiac/projects/sistemas-pagos-frontend# 
+
+
+33 - 
+
+
+
+
+
+
+
+
+
+
+

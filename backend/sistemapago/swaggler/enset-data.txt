@@ -1,0 +1,19 @@
+
+root@brainiac-Inspiron-3437:/home/brainiac# cd enset-data
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data# ls
+pagos
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data# cd pagos
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data/pagos# ls
+505e49da-199a-4c38-a51b-838b34ae53e4.pdf
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data/pagos#
+
+após adicionar Raul Ramirez no pago como cheque
+
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data/pagos# ls
+505e49da-199a-4c38-a51b-838b34ae53e4.pdf
+a49165e7-2a55-4c5c-8c3d-c8aa0cdef0c8.pdf
+root@brainiac-Inspiron-3437:/home/brainiac/enset-data/pagos#
+
+
+CRIAR ANGULAR
+

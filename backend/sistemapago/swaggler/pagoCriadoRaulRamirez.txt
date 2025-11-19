@@ -1,0 +1,19 @@
+Code	Details
+200
+Response body
+
+{
+  "id": 52,
+  "fecha": "2025-11-05",
+  "cantidad": 1500.9,
+  "type": "CHEQUE",
+  "status": "CREADO",
+  "file": "file:///home/brainiac/enset-data/pagos/a49165e7-2a55-4c5c-8c3d-c8aa0cdef0c8.pdf",
+  "estudiante": {
+    "id": "b98e5bb9-c821-4888-8524-4b0020812edd",
+    "nombre": "Raul",
+    "apellido": "Ramirez",
+    "codigo": "12349030",
+    "programaId": "LTA2",
+    "foto": null
+  }

@@ -1,0 +1,103 @@
+Para resolver conflitos de importação no Angular quando um
+service e um model têm o mesmo nome, você pode usar aliases de importação ou seguir as convenções de nomenclatura sugeridas pelo Angular. 
+Solução 1: Usar Aliases de Importação (Renomear na Importação)
+A maneira mais direta de resolver o conflito é renomear uma das importações usando a palavra-chave as. Isso permite que ambas as classes sejam usadas no mesmo arquivo sem ambiguidade. 
+Exemplo:
+Suponha que você tenha um modelo User e um serviço User, localizados em diferentes arquivos:
+--------------------------------------------------------------------------
+    src/app/models/user.model.ts:
+    typescript
+
+export class User {
+  id: number;
+  name: string;
+}
+
+--------------------------------------------------------------------------
+src/app/services/user.service.ts:
+typescript
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class User { // AQUI ESTÁ O CONFLITO SE NÃO RENOMEAR O ARQUIVO/CLASSE
+  getUsers() {
+    return [{ id: 1, name: 'Alice' }];
+  }
+}
+
+--------------------------------------------------------------------------
+
+Em um componente que precisa de ambos, você pode importar o modelo com um alias:
+
+    src/app/user-list/user-list.component.ts:
+    typescript
+
+import { Component } from '@angular/core';
+import { User as UserModel } from '../models/user.model'; // Alias para o modelo
+import { User } from '../services/user.service'; // Nome original para o serviço (ou vice-versa)
+
+@Component({
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.css']
+})
+export class UserListComponent {
+  users: UserModel[] = []; // Usando o alias
+
+  constructor(private userService: User) { // Usando o nome original para injeção
+    this.users = this.userService.getUsers();
+  }
+}
+
+Solução 2: Seguir as Convenções de Nomenclatura do Angular (Recomendado)
+A melhor prática no ecossistema Angular é evitar que as classes tenham o mesmo nome, mesmo em arquivos diferentes. Isso aumenta a clareza e a legibilidade do código. 
+
+    Para Modelos/Interfaces: Use o nome da entidade (ex: User, Product).
+    Para Serviços: Adicione o sufixo Service ao nome da classe e do arquivo (ex: UserService, user.service.ts). 
+
+Exemplo seguindo as convenções:
+
+    src/app/models/user.model.ts:
+    typescript
+
+export interface User { // Usando interface ou classe
+  id: number;
+  name: string;
+}
+
+src/app/services/user.service.ts:
+typescript
+
+import { Injectable } from '@angular/core';
+// Importa o modelo
+import { User } from '../models/user.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService { // Nome da classe diferente (com sufixo Service)
+  getUsers(): User[] { // Retorna um array do modelo User
+    return [{ id: 1, name: 'Alice' }];
+  }
+}
+
+src/app/user-list/user-list.component.ts:
+typescript
+
+import { Component } from '@angular/core';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service'; // Importação clara
+
+@Component({...})
+export class UserListComponent {
+  users: User[] = [];
+
+  constructor(private userService: UserService) { // Injeção clara
+    this.users = this.userService.getUsers();
+  }
+}
+
+Seguir a convenção de nomenclatura é a abordagem padrão e evita a necessidade de aliases, tornando o código mais fácil de entender e manter a longo prazo. 

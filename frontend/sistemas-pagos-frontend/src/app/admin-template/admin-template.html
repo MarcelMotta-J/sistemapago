@@ -1,0 +1,74 @@
+<style>
+
+</style>
+
+<mat-toolbar  >
+    <button mat-button  (click)="myDrawer.toggle()"> <!-- fazer <mat-drawer #myDrawer -->
+      <mat-icon  >menu</mat-icon>
+    </button>
+
+    <span style="flex: auto;"></span>
+
+    <button mat-button  >
+      <mat-icon  routerLink="/admin/home" >home</mat-icon>
+    </button>
+
+    <button mat-button routerLink="/admin/profile"  >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <button *ngIf="authService.roles.includes('ADMIN')" mat-button [matMenuTriggerFor] = "importMenu" >
+      <mat-icon iconPositionEnd >keyboard_arrow_down</mat-icon>
+      Importar
+    </button>
+
+    <mat-menu #importMenu>
+      <button mat-menu-item routerLink="/admin/loadEstudiantes" >Load Estudiantes</button>
+      <button mat-menu-item routerLink="/admin/loadPagos"  >Load Pagos</button>
+    </mat-menu>
+
+    <button mat-button *ngIf="authService.isAuthenticated">
+      {{ authService.username }}
+    </button>
+
+    <button mat-raised-button  (click)="logout()"><mat-icon>logout</mat-icon></button>
+    
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #myDrawer opened="true" mode="side" position="start">
+    <mat-list>
+      <mat-list-item >
+        <button mat-button routerLink="/admin/dashboard" >
+          <mat-icon>dashboard</mat-icon>
+          <span>dashboard</span>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/estudiantes"  >
+          <mat-icon>dashboard</mat-icon>
+          <span>estudiantes</span>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/pagos"  >
+          <mat-icon>dashboard</mat-icon>
+          <span>pagos</span>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content class="example-container">
+    <div style="min-height: 600px;">
+      <!-- r
+       outer-outlet permite o routeamento sem carregar totalmente a página, só o componente
+       requisitado na rota definida em app-routing-module.ts 
+       -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+

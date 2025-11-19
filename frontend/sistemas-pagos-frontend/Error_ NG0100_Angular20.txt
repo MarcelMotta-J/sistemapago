@@ -1,0 +1,39 @@
+angular 20 ERROR Error: NG0100: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: 'undefined'. Current value
+
+SOLUÇÃO:
+ --------------------------------------------------------------------------- 
+ ALTERAR src/app/estudiantes e src/app/estudiante-details
+ 
+
+1 - ACRESCENTAR IMPORT 
+
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+ --------------------------------------------------------------------------- 
+
+2 - EM CONSTRUCTOR ADICIONE O ATRIBUTO private cdr: ChangeDetectorRef
+constructor(private estudianteService: UserService, private router: Router, private cdr: ChangeDetectorRef){
+
+  }
+ --------------------------------------------------------------------------- 
+ 
+3 - ADICIONAR EM ngOnInit()  this.cdr.detectChanges();
+DESTA FORMA:
+
+ngOnInit(): void {
+    this.estudianteService.getAllEstudiantes().subscribe({
+      next: value =>{
+        this.estudiantes = value;
+
+        this.estudiantesDataSource = new MatTableDataSource<Estudiante>(this.estudiantes);  
+
+        this.cdr.detectChanges();
+        
+      },
+      error: err =>{
+        console.log(err);
+      }
+    });
+  }
+  
+  
+

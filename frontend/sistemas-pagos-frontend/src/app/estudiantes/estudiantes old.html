@@ -1,0 +1,37 @@
+
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Estudiantes
+            </mat-card-title>
+        </mat-card-header>
+        
+        <mat-divider></mat-divider>
+            
+        <mat-card-content>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Código</th>
+                        <th>Programa Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let estudiante of estudiantes ">
+                        <td>{{ estudiante.id }}</td>
+                        <td>{{ estudiante.nombre }}</td>
+                        <td>{{ estudiante.apellido }}</td>
+                        <td>{{ estudiante.codigo }}</td>
+                        <td>{{ estudiante.programaId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+
+    </mat-card>
+</div>

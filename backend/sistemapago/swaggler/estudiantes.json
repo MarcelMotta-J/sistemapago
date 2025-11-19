@@ -1,0 +1,42 @@
+[
+  {
+    "id": "4fd1174f-8f51-4a2b-82c9-c545de6c3cfd",
+    "nombre": "Christian",
+    "apellido": "Ramirez",
+    "codigo": "1234",
+    "programaId": "LTA1",
+    "foto": null
+  },
+  {
+    "id": "6a9e6c2d-11da-457f-aa18-cc0a2f2fdf68",
+    "nombre": "Biaggio",
+    "apellido": "Ramirez",
+    "codigo": "12354",
+    "programaId": "LTA1",
+    "foto": null
+  },
+  {
+    "id": "7ca6b386-364f-43b9-924f-90203cda85a2",
+    "nombre": "Julen",
+    "apellido": "Ramirez",
+    "codigo": "1256634",
+    "programaId": "LTA1",
+    "foto": null
+  },
+  {
+    "id": "b98e5bb9-c821-4888-8524-4b0020812edd",
+    "nombre": "Raul",
+    "apellido": "Ramirez",
+    "codigo": "12349030",
+    "programaId": "LTA2",
+    "foto": null
+  },
+  {
+    "id": "3538a75b-65d1-44fd-8d3a-69fb17ffb4be",
+    "nombre": "Marcel",
+    "apellido": "Motta",
+    "codigo": "12349055",
+    "programaId": "LTA2",
+    "foto": null
+  }
+]

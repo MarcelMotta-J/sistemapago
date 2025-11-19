@@ -1,0 +1,14 @@
+{
+  "routes": {
+    "/": {},
+    "/admin": {},
+    "/dashboard": {},
+    "/estudiantes": {},
+    "/home": {},
+    "/loadEstudiantes": {},
+    "/loadPagos": {},
+    "/login": {},
+    "/pagos": {},
+    "/profile": {}
+  }
+}
