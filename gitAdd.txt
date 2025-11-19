@@ -191,9 +191,36 @@ branch 'main' set up to track 'origin/main'.
 root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# 
 
 ------------------------------------------------------------------------------------------
+6- ADICIONANDO MAIS COISAS
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git commit -a -m "mandando tutorial git"
+[main 65ccafb3] mandando tutorial git
+ 1 file changed, 98 insertions(+), 2 deletions(-)
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git status
+
+VERIFICANDO
+
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/arquivos# git status
+On branch teste
+Your branch is ahead of 'origin/teste' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/arquivos#
 
 
 ------------------------------------------------------------------------------------------
+7- ENVIANDO A NOVA MUDANÇA 
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.22 KiB | 2.22 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MarcelMotta-J/sistemapago.git
+   b03f2647..65ccafb3  main -> main
+root@brainiac-Inspiron-3437:/home/brainiac/Documents/javaProjects/sistemapago# 
 
 ------------------------------------------------------------------------------------------
 
